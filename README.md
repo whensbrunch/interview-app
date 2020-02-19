@@ -1,6 +1,8 @@
 # Challenge Description
 
-We’re a stealth-mode startup looking for the first version of our client-facing web application. In a nutshell, we’d like to provide a prompt to users (e.g. “What do you think of the results of the New Hampshire primaries?”) and have them record a video of their response. Core Functionality:
+We’re looking to build the first version of our client-facing web application. In a nutshell, we’d like to provide a prompt to users (e.g. “What do you think of the results of the New Hampshire primaries?”) and have them record a video of their response. 
+
+Core functionality includes:
 - User sign-up and login
 - Display prompt and record video
 - View and replay saved videos
@@ -57,15 +59,12 @@ The stack consists of
 4. Data Model: prisma2
 5. Storage: Postgres + S3
 
-
 ## Programming Guidelines
 
 1. Please use the dependencies provided here (unless necessary, don't change them)
 2. The app should be implemented in typescript + React. Please follow best practices -- such as using react hooks and functional components.
 3. Please use off the shelf MUI components wherever possible.
 4. Use redux for global state management, and use redux-saga for asynchronous API call management.
-
-
 
 ## Links
 
