@@ -1,0 +1,40 @@
+{
+  "name": "app-backend",
+  "scripts": {
+    "start": "ts-node-dev -r tsconfig-paths/register src/server",
+    "clean": "rm -rf dist",
+    "build": "npm -s run clean && npm -s run generate && tsc",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma2 generate",
+    "generate:nexus": "NODE_ENV=development ts-node --transpile-only src/schema",
+    "postinstall": "npm -s run generate",
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly --tree-kill  -r tsconfig-paths/register src/server",
+    "prod": "node -r tsconfig-paths/register src/server.js",
+    "seed": "ts-node prisma/seed"
+  },
+  "dependencies": {
+    "@prisma/client":"2.0.0-preview021",
+    "@prisma/sdk": "^0.0.203",
+    "prisma2": "^2.0.0-preview021",
+    "graphql": "^14.5.8",
+    "graphql-yoga": "^1.18.3",
+    "nexus": "^0.12.0-rc.11",
+    "nexus-prisma": "^0.9.1",
+    "faker": "^4.1.0",
+    "tsconfig-paths": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@types/ws": "^6.0.4",
+    "@types/faker": "^4.1.8",
+    "ts-node": "^8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.3",
+    "cross-env": "^6.0.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  }
+}
